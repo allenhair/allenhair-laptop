@@ -1,0 +1,9 @@
+- name: Install keybase.
+  apt:
+    deb: https://prerelease.keybase.io/keybase_amd64.deb
+  become: true
+  register: keybase
+- name: Start keybase.
+  command: run_keybase
+  when: keybase.changed
+
