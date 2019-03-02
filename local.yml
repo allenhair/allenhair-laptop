@@ -6,4 +6,10 @@
       apt:
         upgrade: dist
         update_cache: yes
+    - name: Install packages.
+      apt: name={{item}}
+      with_items:
+      - ansible
+      - git
+      - vim
 
