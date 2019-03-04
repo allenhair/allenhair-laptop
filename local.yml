@@ -8,5 +8,6 @@
       become: true
     - include: tasks/git.yml
     - include: tasks/keybase.yml
+    - include: tasks/piavpn.yml
     - include: tasks/vim.yml
 

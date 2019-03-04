@@ -1,0 +1,16 @@
+- name: Check if Private Internet Access is installed.
+  stat:
+    path: /opt/piavpn
+  register: pia
+- name: Install Private Internet Access.
+  block:
+  - name: Download Private Internet Access installer.
+    get_url:
+      dest: /tmp
+      mode: "u+x"
+      url: https://installers.privateinternetaccess.com/download/pia-linux-1.1.1-02545.run
+    register: pia_installer
+  - name: Install Private Internet Access.
+    script: "{{ pia_installer.dest }} --nox11"
+  when: not pia.stat.exists
+
