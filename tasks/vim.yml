@@ -1,0 +1,20 @@
+- name: Install vim.
+  apt:
+    name: vim
+  become: true
+- name: Create ~/.vim/autoload directory.
+  file:
+    path: ~/.vim/autoload
+    recurse: true
+    state: directory
+- name: Install vim-plug.
+  get_url:
+    dest: ~/.vim/autoload/plug.vim
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+- name: Copy .vimrc.
+  copy:
+    src: files/vimrc
+    dest: ~/.vimrc
+- name: Install plugins.
+  command: vim +'PlugInstall --sync' +qa
+

@@ -6,12 +6,7 @@
         upgrade: dist
         update_cache: yes
       become: true
-    - name: Install packages.
-      apt: name={{item}}
-      become: true
-      with_items:
-      - ansible
-      - vim
     - include: tasks/git.yml
     - include: tasks/keybase.yml
+    - include: tasks/vim.yml
 

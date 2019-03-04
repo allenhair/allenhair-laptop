@@ -1,0 +1,10 @@
+" Define plugins. Use :PlugInstall to update.
+call plug#begin()
+Plug 'lifepillar/vim-solarized8'
+call plug#end()
+
+" Enable solarized colorscheme.
+set termguicolors
+set background=dark
+silent! colorscheme solarized8
+
