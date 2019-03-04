@@ -15,6 +15,8 @@
   copy:
     src: files/vimrc
     dest: ~/.vimrc
+  register: vimrc
 - name: Install plugins.
   command: vim +'PlugInstall --sync' +qa
+  when: vimrc.changed
 
