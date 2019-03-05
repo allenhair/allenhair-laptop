@@ -6,6 +6,7 @@
         upgrade: dist
         update_cache: yes
       become: true
+    - include: tasks/docker.yml
     - include: tasks/git.yml
     - include: tasks/keybase.yml
     - include: tasks/piavpn.yml
