@@ -1,0 +1,7 @@
+- name: Generate ssh keypair.
+  user:
+    name: allenhair
+    generate_ssh_key: yes
+    ssh_key_bits: 4096
+    ssh_key_comment: allenhair@allenhair-laptop
+    ssh_key_type: rsa

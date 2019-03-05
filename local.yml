@@ -9,5 +9,6 @@
     - include: tasks/git.yml
     - include: tasks/keybase.yml
     - include: tasks/piavpn.yml
+    - include: tasks/ssh.yml
     - include: tasks/vim.yml
 
