@@ -12,5 +12,9 @@
     register: pia_installer
   - name: Install Private Internet Access.
     script: "{{ pia_installer.dest }} --nox11"
+  - name: Cleanup installer.
+    file:
+      path: "{{ pia_installer.dest }}"
+      state: absent
   when: not pia.stat.exists
 
