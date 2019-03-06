@@ -15,4 +15,10 @@
     - docker-ce
     - docker-ce-cli
     - containerd.io
+- name: Add user to the docker group.
+  user:
+    name: allenhair
+    append: true
+    groups: docker
+  become: true
 
