@@ -1,15 +1,14 @@
 - name: Check if keybase is installed.
-  apt:
-    name: keybase
-    state: present
-  check_mode: true
+  command: dpkg-query -l 'keybase'
   register: keybase
-- name: Install keybase.
-  apt:
-    deb: https://prerelease.keybase.io/keybase_amd64.deb
-  become: true
-  when: keybase.changed
-- name: Start keybase.
-  command: run_keybase
+  changed_when: keybase.rc == 1
+  failed_when: keybase.rc > 1
+- block:
+  - name: Install keybase.
+    apt:
+      deb: https://prerelease.keybase.io/keybase_amd64.deb
+    become: true
+  - name: Start keybase.
+    command: run_keybase
   when: keybase.changed
 
