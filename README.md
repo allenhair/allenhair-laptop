@@ -6,11 +6,15 @@ This ansible playbook will configure my laptop after reimaging.
 
 Both ansible and git must be installed before this playbook can be used:
 
-    sudo apt install ansible git
+```shell
+sudo apt install ansible git
+```
 
-## Installing
+## Usage
 
 Use the ansible-pull command to clone this playbook and run it:
 
-    ansible-pull -K -i "allenhair-laptop," -U https://github.com/allenhair/allenhair-laptop.git
+```shell
+ansible-pull -K -i "allenhair-laptop," -U https://github.com/allenhair/allenhair-laptop.git
+```
 
