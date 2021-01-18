@@ -1,3 +1,7 @@
+- name: Install gpg.
+  apt:
+    name: gpg
+  become: true
 - name: Add Docker GPG key.
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
