@@ -1,6 +1,10 @@
 " Define plugins. Use :PlugInstall to update.
 runtime plugins.vim
 
+" Configure vim-codefmt.
+call glaive#Install()
+Glaive codefmt google_java_executable=`expand('java -jar $HOME/.java/bin/google-java-format-1.9-all-deps.jar')`
+
 " Enable solarized colorscheme.
 set termguicolors
 set background=dark
