@@ -15,8 +15,12 @@
   copy:
     src: files/vimrc
     dest: ~/.vim/vimrc
-  register: vimrc
+- name: Copy plugins.vim.
+  copy:
+    src: files/plugins.vim
+    dest: ~/.vim/plugins.vim
+  register: plugins
 - name: Install plugins.
-  command: vim +'PlugInstall --sync' +qa
-  when: vimrc.changed
+  command: vim -u ~/.vim/plugins.vim +'PlugInstall --sync' +qa
+  when: plugins.changed
 
