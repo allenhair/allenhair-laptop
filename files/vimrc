@@ -17,3 +17,9 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" Highlight text matching current search.
+set hlsearch
+
+" Press space to clear highlighting.
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
